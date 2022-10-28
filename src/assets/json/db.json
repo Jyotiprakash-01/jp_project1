@@ -1,0 +1,7 @@
+{
+    "user": [
+      { "id": 1, "firstname": "jyoti", "lastname": "Prakash","email":"jyotiprakash@orion.in","password":"Prakash@01" },
+      { "id": 2, "firstname": "Durgesh", "lastname": "Sahu","email":"durgesh@orion.in","password":"durgesh@01" }
+    ]
+
+  }

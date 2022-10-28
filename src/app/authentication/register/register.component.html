@@ -1,0 +1,169 @@
+<form id="form"  [formGroup]="regForm" (ngSubmit)="onSubmit()" >
+    <h1> Registration Form</h1>
+
+    <div class="form-group">
+        <label for="name" style="color:black">First Name</label>
+       
+        <br />
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i>
+            </div>
+            <input type="text" id="name" placeholder="Enter Your FirstName" formControlName="f_name" />
+        </div>
+        <span>
+
+            <label id="fname_val" for="fname_val" class="col-4  form-label text-danger"
+            *ngIf="f['f_name'].touched && f['f_name'].errors?.['required'] ">*Required</label>
+            <label id="fname_val" for="fname_val" class="col-4  form-label text-danger"
+            *ngIf="f['f_name'].touched && f['f_name'].errors?.['pattern'] ">Only alphabets are allowed</label>
+        </span>
+    </div>
+
+    <div class="form-group">
+        <label for="name" style="color:black">Last Name</label>
+        <br />
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i>
+            </div>
+            <input type="text" id="name" placeholder="Enter Your LastName" formControlName="l_name"/>
+        </div>
+        <span>
+
+            <label id="lname_val" for="lname_val" class="col-4  form-label text-danger"
+            *ngIf="f['l_name'].touched && f['l_name'].errors?.['required'] ">*Required</label>
+            <label id="fname_val" for="fname_val" class="col-4  form-label text-danger"
+            *ngIf="f['l_name'].touched && f['l_name'].errors?.['pattern'] ">Only alphabets are allowed</label>
+        </span>
+    </div>
+
+    <div class="form-group">
+        <label for="username" style="color:black">Your Username</label>
+        <br />
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-users" aria-hidden="true"></i> </div>
+            <input type="text" id="username" placeholder="Enter Your Username"  formControlName="username" />
+        </div>
+        <span>
+
+            <label id="user_val" for="user_val" class="col-4  form-label text-danger"
+            *ngIf="f['username'].touched && f['username'].errors?.['required'] ">*Required</label>
+            <label id="user_val" for="user_val" class="col-4  form-label text-danger"
+            *ngIf="f['username'].touched && f['username'].errors?.['pattern'] ">Username should contain atleast a small letter,capital letter and a special character</label>
+        </span>
+    </div>
+
+
+    <div class="form-group">
+        <label for="email" style="color:black">Your Email</label>
+        <br />
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"> </i></div>
+            <input type="email" id="email" placeholder="Enter Your Email"  formControlName="email"/>
+        </div>
+        <span>
+
+            <label id="email_val" for="email_val" class="col-4  form-label text-danger"
+            *ngIf="f['email'].touched && f['email'].errors?.['required'] ">*Required</label>
+            <label id="email_val" for="email_val" class="col-4  form-label text-danger"
+            *ngIf="f['email'].touched && f['email'].errors?.['pattern'] ">Please provide a valid email</label>
+        </span>
+    </div>
+
+
+
+    <div class="form-group">
+        <label for="number" style="color:black">Phone Number</label>
+        <br />
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"> </i></div>
+            <input type="tel" id="number" placeholder="Enter Your Phone number"  formControlName="phone" />
+        </div>
+        <span>
+
+            <label id="phone_val" for="phone_val" class="col-4  form-label text-danger"
+            *ngIf="f['phone'].touched && f['phone'].errors?.['required'] ">*Required</label>
+            <label id="phone_val" for="phone_val" class="col-4  form-label text-danger"
+            *ngIf="f['phone'].touched && f['phone'].errors?.['pattern'] ">Please provide a valid phone number</label>
+        </span>
+    </div>
+
+
+
+
+
+    <div class="form-group">
+        <label for="password" style="color:black">Your Password</label>
+        <br />
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i> </div>
+            <input type="text" id="password" placeholder="Enter Your Password"  formControlName="pass" (input)="checkMatch()"/>
+        </div>
+        <span>
+
+            <label id="pass_val" for="pass_val" class="col-4  form-label text-danger"
+            *ngIf="f['pass'].touched && f['pass'].errors?.['required'] ">*Required</label>
+            <label id="pass_val" for="pass_val" class="col-4  form-label text-danger"
+            *ngIf="f['pass'].touched && f['pass'].errors?.['pattern'] ">Please provide a strong password</label>
+        </span>
+    </div>
+
+
+    <div class="form-group">
+        <label for="password-confirm" style="color:black">Confirm Your Password</label>
+        <br />
+        <input type="password" name="repass" placeholder="Retype Your Password" class="form-control" id="repass" formControlName="repass" (input)="checkMatch()">
+        </div>
+        <div class="form-control" *ngIf="f['repass'].touched && f['repass'].value!==''">
+            <div *ngIf="!passwordMatch ">
+              Passwords must match
+            </div>
+        </div>
+        	
+
+
+
+
+
+
+
+
+
+
+
+    <p style="color:black"> <b>Your Gender:</b></p>
+    <div id="response">
+        <input type="radio" class="button" name="gender" id="male" value="male" formControlName="gender" >Male
+        <input type="radio" class="button" name="gender" id="female" value="female" formControlName="gender">Female
+        <input type="radio" class="button" name="gender" id="others" value="others" formControlName="gender">Others
+    </div><br>
+    <span>
+
+        <label id="gen_val" for="gen_val" class="col-4  form-label text-danger"
+        *ngIf="f['gender'].touched && f['gender'].errors?.['required'] ">*select a gender</label>
+        
+    </span>
+    
+
+    
+    <p style="color:black"> <b>You are logging as:</b></p>
+
+    <select id="dropdown" formControlName="drop">
+        <option value="" disabled="disable" selected="selected">-select-</option>
+        <option>User</option>
+        <option>Adminstrator</option>
+        <option>Developer</option>
+
+    </select><br>
+    <span>
+
+        <label id="drop_val" for="drop_val" class="col-4  form-label text-danger"
+        *ngIf="f['drop'].touched && f['drop'].errors?.['required'] ">*Required</label>
+    </span>
+
+
+    <button type="submit" class="btn btn-default" (click)="onSubmit()">Register</button><br><br>
+
+    <p style="text-align: center ;color:black">Already have an account <a style="color:rgb(226, 19, 19)"
+            href="/login">Login</a></p>
+
+</form>

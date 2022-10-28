@@ -4,9 +4,12 @@ import { ClassComponent } from './class/class.component';
 
 
 
+
+
 @NgModule({
   declarations: [
-    ClassComponent
+    ClassComponent,
+   
   ],
   imports: [
     CommonModule
