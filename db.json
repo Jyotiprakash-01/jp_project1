@@ -1,7 +1,53 @@
 {
-    "user": [
-      { "id": 1, "firstname": "Shibani", "lastname": "Das" },
-      { "id": 2, "firstname": "Vishal", "lastname": "Gaurav" }
-    ]
-
+  "posts": [
+    {
+      "id": "5",
+      "name": "student8",
+      "rollno": 1,
+      "fathername": "father1",
+      "section": "a"
+    },
+    {
+      "id": "4",
+      "name": "student2",
+      "rollno": 2,
+      "fathername": "father2",
+      "section": "b"
+    }
+  ],
+  "signup": [
+    {
+      "name": "",
+      "mobile": "",
+      "email": "",
+      "password": "",
+      "id": 1
+    },
+    {
+      "firstname": "jyoti",
+      "lastname": "jyoti",
+      "username": "jprakash",
+      "email": "jyoti.prakash@orionesolutions.in",
+      "password": "Prakash@01",
+      "phone": "6845721565",
+      "gender": "male",
+      "drop": "Adminstrator",
+      "id": 2
+    },
+    {
+      "firstname": "jyoti",
+      "lastname": "jyoti",
+      "username": "jprakash",
+      "email": "jp@gmail.com",
+      "password": "Prakash@01",
+      "phone": "6845721565",
+      "gender": "male",
+      "drop": "Adminstrator",
+      "id": 3
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
   }
+}

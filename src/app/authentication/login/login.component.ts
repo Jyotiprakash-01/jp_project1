@@ -32,20 +32,19 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    
-
+    this.serv.loginServ().subscribe((data: any) => {
+      data.map((val: { email: any, password: any }) => {
+        if ( val.email==this.f['email'].value && val.password==this.f['pass'].value ) {
+          alert('Login Succesful!')
+          this.router.navigateByUrl('')
+        }
+      })
+    })
   
   }
   showName() {
     console.log(this.f['email'].value)
     console.log(this.f['pass'].value)
-    this.serv.loginServ().subscribe((data: any) => {
-      data.map((val: { email: any, password: any }) => {
-        if ( val.email==this.f['email'].value && val.password==this.f['pass'].value ) {
-          alert('Login Succesful!')
-          this.router.navigateByUrl('/dashboard')
-        }
-      })
-    })
+    
   }
 }
